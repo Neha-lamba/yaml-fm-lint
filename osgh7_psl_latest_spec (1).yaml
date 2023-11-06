@@ -1,0 +1,39 @@
+---
+openapi: "3.0.1"
+info:
+  title: "PSL"
+  description: "PSL Integration"
+  version: "latest"
+  license:
+    name: "Deutsche Telekom AG"
+host: "localhost"
+basePath: "/sn-test/psl/v1"
+schemes:
+- "https"
+paths:
+  /Create SMOrderId for Work Order:
+    post:
+      description: "Get SM WorkOrder ID and Update WorkOrder (POST)"
+      operationId: "getSMOrderId"
+      responses:
+        "200":
+          description: "ok"
+  /Service Notification Acknowledge:
+    post:
+      description: "Get Acknowledge from PSL"
+      operationId: "getSerNotAck"
+      responses:
+        "200":
+          description: "ok"
+  /api/osgh7/psl/workOrder/{work_order_number}:
+    get:
+      description: ""
+      parameters:
+      - name: "work_order_number"
+        in: "path"
+        required: true
+        schema: {}
+      responses:
+        "200":
+          description: "ok"
+          
